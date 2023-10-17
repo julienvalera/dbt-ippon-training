@@ -32,3 +32,12 @@ models:
   dbt_ippon_training:
     # Config indicated by + and applies to all files under models/
     +materialized: table
+    staging:
+      +materialized: table
+
+vars:
+  nb_restaurants_to_show: 10
+
+seeds:
+    dbt_ippon_training:
+      +schema: SAMPLE
