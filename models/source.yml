@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: snowflake
+    database: DB_DBT_JVALERA_DEV
+    schema: SOURCE
+
+    tables:
+      - name: orders
+        columns:
+          - name: identifier
+            description: This is a the name of the restaurant
+            tests:
+              - unique
+      - name: restaurants
+        columns:
+          - name: name
+            description: This is a the name of the restaurant
+            tests:
+              - unique
+      - name: fuzzy_orders
+      - name: dishes
